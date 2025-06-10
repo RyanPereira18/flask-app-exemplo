@@ -9,7 +9,7 @@ chave_secreta = os.getenv('API_KEY')
 print(chave_secreta)
 generativeai.configure(api_key=chave_secreta)
 
-csv_url = 'https://docs.google.com/spreadsheets/d/11QU1ibjUAlNKLwLWF1s-kSpRH2UBOiVbLyl1pJIyeSk/export?format=csv&id=11QU1ibjUAlNKLwLWF1s-kSpRH2UBOiVbLyl1pJIyeSk'
+csv_url = 'https://docs.google.com/spreadsheets/d/1UfFILNIF5UGZsWO0ykdmqmfIlVixR6XnV-OP70SyOaU/export?format=csv&id=1UfFILNIF5UGZsWO0ykdmqmfIlVixR6XnV-OP70SyOaU'
 df = pd.read_csv(csv_url)
 print(df.head())
 
@@ -27,7 +27,7 @@ df["Embeddings"] = df.apply(lambda row: gerarEmbeddings(row["Titulo"],row["Conte
 print(df)
 
 import pickle
-pickle.dump(df, open('datasetEmbedding2025.pkl','wb'))
+pickle.dump(df, open('datasetEmbedding.pkl','wb'))
 
 modeloEmbeddings = pickle.load(open('datasetEmbedding2025.pkl','rb'))
 print(modeloEmbeddings)

@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app)  # Initialize CORS for the entire application
 
 model = 'models/text-embedding-004'
-modeloEmbeddings = pickle.load(open('datasetEmbedding2025.pkl','rb'))
+modeloEmbeddings = pickle.load(open('datasetEmbedding.pkl','rb'))
 chave_secreta = os.getenv('API_KEY')
 generativeai.configure(api_key=chave_secreta)
 print(chave_secreta)
@@ -58,7 +58,7 @@ def melhorarResposta(inputText):
 
 @app.route("/")
 def home():
-    consulta = "Onde fica os campus?"
+    consulta = "O que é uma granja?"
     resposta = gerarBuscarConsulta(consulta, modeloEmbeddings)
     prompt = f"Consulta: {consulta} Resposta: {resposta}"
     response = melhorarResposta(prompt)
