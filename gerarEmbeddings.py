@@ -29,5 +29,5 @@ print(df)
 import pickle
 pickle.dump(df, open('datasetEmbedding.pkl','wb'))
 
-modeloEmbeddings = pickle.load(open('datasetEmbedding2025.pkl','rb'))
+modeloEmbeddings = pickle.load(open('datasetEmbedding.pkl','rb'))
 print(modeloEmbeddings)
