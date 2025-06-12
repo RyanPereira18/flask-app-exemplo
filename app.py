@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app)  # Initialize CORS for the entire application
 
 model = 'models/text-embedding-004'
-modeloEmbeddings = pickle.load(open('datasetEmbeddings.pkls','rb'))
+modeloEmbeddings = pickle.load(open('datasetEmbeddings.pkls','wb'))
 chave_secreta = os.getenv('API_KEY')
 generativeai.configure(api_key=chave_secreta)
 print(chave_secreta)
